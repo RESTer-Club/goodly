@@ -1,0 +1,18 @@
+{
+    "node": true,
+    "browser": true,
+    "esnext": true,
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "latedef": false,
+    "noarg": true,
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "jasmine": true,
+    "jquery": true,
+    "globals": {
+
+    }
+}
