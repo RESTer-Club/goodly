@@ -29,6 +29,7 @@ $(function() { //DOM Ready
 		dashboardName = 'sample';
 	}
 	console.log(dashboardName + " dashboard loaded");
+	document.title = dashboardName.toUpperCase();
 
 	$("#dashboard").load("dashboards/" + dashboardName + ".html", function() {
 
