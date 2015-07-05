@@ -2,19 +2,26 @@
 
 var express = require('express'),
 	config = require('./config'),
+	_ = require('lodash'),
+	fs = require('fs'),
 	app = express();
 
-// app.set('views', __dirname + '/dashboards');
-// app.set('view engine', 'jade');
+app.set("view options", {layout: false});
 
-app.use(express.static('dashboards'));
-app.use(express.static('widgets'));
+app.use(express.static('public'));
+app.use(express.static('common'));
 app.use(express.static('node_modules'));
-app.use(express.static('js'));
-app.use(express.static('css'));
 
-app.get('/', function(req, res) {
-	res.render('index.html');
+app.get('/:dashboard', function(req, res) {
+	var dasboardNames = fs.readdirSync('./public/dashboards');
+	var isExist = _.includes(dasboardNames, req.params.dashboard + ".html");
+	if(!isExist){
+		res.send('Dashboard ' + req.params.dashboard + ' does not exist!');
+		return;
+	}
+	var template = fs.readFileSync('./common/index.html');
+	res.write(template);
+	res.end();
 });
 
 app.listen(config.server.PORT, function() {

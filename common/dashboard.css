@@ -1,5 +1,5 @@
 body {
-    background-color: #EEEEEE;
+    background-color: #080808;
     font-family: 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: x-small;
@@ -10,34 +10,8 @@ ul, ol {
     list-style: none;
 }
 
-h1 {
-  margin-bottom: 12px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 25px;
-  font-weight: 600;
-  color: white;
-}
-
-/* Gridster styles */
-.demo {
-    margin: 3em 0;
-    padding: 7.5em 0 5.5em;
-    background: #004756;
-}
-
-.demo:hover .gridster {
-    opacity: 1;
-}
-
 .gridster {
-    width: 940px;
     margin: 0 auto;
-
     opacity: .8;
 
     -webkit-transition: opacity .6s;
@@ -52,4 +26,16 @@ h3 {
     cursor: pointer;
     -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.gridster ul li {
+    background-color: #2e2e2e;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px #303030;
+    -webkit-box-shadow: 1px 1px 1px #303030;
+}
+
+.gridster ul li:hover {
+    box-shadow: 0px 0px 10px #ffffff;
+    -webkit-box-shadow: 0px 0px 10px #ffffff;
 }
